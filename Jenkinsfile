@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SONARQUBE_SERVER = 'sonar-imcc'     // Jenkins → Configure System → SonarQube Server Name
+        SONARQUBE_SERVER = 'sonar-imcc-2401060'     // Jenkins → Configure System → SonarQube Server Name
         IMAGE_NAME = "mern-common-app"
         REGISTRY = "nexus.imcc.com:8082"
         SONAR_URL = "http://sonarqube.imcc.com/"
