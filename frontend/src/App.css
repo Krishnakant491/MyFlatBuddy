@@ -1,0 +1,46 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.homepage{
+  background: url("./assets/home.jpg") no-repeat center center;
+  background-size: cover;
+}
+.home-input::placeholder{
+  color:black;
+  opacity: 1;
+}
+.post-or-browse {
+  background: url("./assets/post-or-browse.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.post-or-browse::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.277); /* White with 50% opacity */
+  z-index: 1;
+}
+
+.post-or-browse > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hover-arrow:hover .arrow-hover-ani{
+    transform: translate(3px, -3px);
+}
+
+.arrow-hover-ani{
+  transition: transform 0.4s ease-in;
+}
+.blog-image{
+  
+ 
+}
