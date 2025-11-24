@@ -29,6 +29,7 @@ pipeline {
                                 -Dsonar.projectKey=mern \
                                 -Dsonar.sources=. \
                                 -Dsonar.host.url=http://sonarqube.imcc.com/ \
+                                -Dsonar.exclusions=node_modules/**,build/**,dist/**,**/*.html,**/*.css,**/*.png,**/*.jpg
                                 -Dsonar.login=student
                         """
                     }
