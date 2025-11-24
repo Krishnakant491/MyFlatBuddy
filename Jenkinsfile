@@ -12,11 +12,11 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Krishnakant491/MyFlatBuddy.git'
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         git 'https://github.com/Krishnakant491/MyFlatBuddy.git'
+        //     }
+        // }
 
         stage('SonarQube Analysis') {
             steps {
