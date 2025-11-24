@@ -10,6 +10,14 @@ pipeline {
 
     stages {
 
+
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Krishnakant491/MyFlatBuddy.git'
+            }
+        }
+
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv(SONARQUBE) {
