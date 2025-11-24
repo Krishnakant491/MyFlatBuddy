@@ -18,21 +18,49 @@ pipeline {
         //     }
         // }
 
+        // stage('SonarQube Analysis') {
+        //     steps {
+        //         script {
+        //             withSonarQubeEnv(SONARQUBE_SERVER) {
+        //                 sh """
+        //                 sonar-scanner \
+        //                   -Dsonar.projectKey=mern \
+        //                   -Dsonar.sources=. \
+        //                   -Dsonar.host.url=${SONAR_URL} \
+        //                   -Dsonar.login=${SONAR_LOGIN}
+        //                 """
+        //             }
+        //         }
+        //     }
+        // }
+
+
         stage('SonarQube Analysis') {
-            steps {
-                script {
-                    withSonarQubeEnv(SONARQUBE_SERVER) {
-                        sh """
-                        sonar-scanner \
-                          -Dsonar.projectKey=mern \
-                          -Dsonar.sources=. \
-                          -Dsonar.host.url=${SONAR_URL} \
-                          -Dsonar.login=${SONAR_LOGIN}
-                        """
-                    }
-                }
+    steps {
+        withSonarQubeEnv('sonar-imcc-2401060') {
+            script {
+                def scannerHome = tool 'sonar-scanner'
+                sh """
+                    ${scannerHome}/bin/sonar-scanner \
+                    -Dsonar.projectKey=mern \
+                    -Dsonar.sources=. \
+                    -Dsonar.host.url=http://sonarqube.imcc.com/ \
+                    -Dsonar.login=student
+                """
             }
         }
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
         stage('Build Docker Image') {
             steps {
